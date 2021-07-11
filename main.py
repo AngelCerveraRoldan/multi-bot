@@ -26,7 +26,7 @@ bot = commands.Bot(
 
 ## COMMANDS
 
-## Wikipedia Comands
+## Search Commands
 @bot.command(name='what', help='Use this command to get a 2 sentence summary of a topic.')
 async def search(ctx, *sentence):
     ## If we added another argument between ctx and *sentence, then sentence would be the every word after the third. This allows us to have multiple arguments.
@@ -46,6 +46,8 @@ async def search(ctx, *sentence):
     response = wiki.search(sentence)
     await ctx.send(response)
 
+    await ctx.delete_message(ctx.message)
+
 @bot.command(name='image', help='Find an image of something.')
 async def image(ctx, *sentence):   
     sentence = ' '.join(sentence)
@@ -53,5 +55,7 @@ async def image(ctx, *sentence):
     image_list = images.get_photo(sentence)
     
     await ctx.send(image_list)
+
+
 
 bot.run(TOKEN)
