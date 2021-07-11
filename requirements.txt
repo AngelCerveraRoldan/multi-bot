@@ -1,3 +1,5 @@
 wikipedia
 python-dotenv
 discord
+wolframalpha
+requests
