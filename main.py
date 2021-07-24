@@ -20,7 +20,7 @@ help_command = commands.DefaultHelpCommand(
 
 bot = commands.Bot(
     command_prefix = commands.when_mentioned_or('$'),
-    description = 'We pretty much all think that Kingsley is reasonably good looking.',
+    description = 'Simple bot made with python.',
     help_command = help_command
 )
 
